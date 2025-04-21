@@ -1,0 +1,706 @@
+{
+	"info": {
+		"_postman_id": "e19fe4e2-0fa8-4797-a6c3-4e406749d75e",
+		"name": "pCloud",
+		"description": "[https://docs.pcloud.com/](https://docs.pcloud.com/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21359648"
+	},
+	"item": [
+		{
+			"name": "BrowserLogin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://my.pcloud.com/oauth2/authorize?client_id=O8u0tcWE63h&response_type=token&redirect_uri=http://localhost",
+					"protocol": "https",
+					"host": [
+						"my",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"oauth2",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "O8u0tcWE63h"
+						},
+						{
+							"key": "response_type",
+							"value": "token"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateFolder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/createfolder?name=Test Folder To Delete&access_token={{access_token}}&folderid=24468504614",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"createfolder"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Test Folder To Delete"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "folderid",
+							"value": "24468504614",
+							"description": "Folder ID of Parent Folder"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RenameFolder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/renamefolder?folderid=24468504614&access_token={{access_token}}&toname=New Testing Folder",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"renamefolder"
+					],
+					"query": [
+						{
+							"key": "folderid",
+							"value": "24468504614"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "toname",
+							"value": "New Testing Folder"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListFolder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/listfolder?access_token={{access_token}}&folderid=0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"listfolder"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "folderid",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": [
+								"/home/priyanka/Documents/Projects/pCloudFiles/Final/merger.py",
+								"/home/priyanka/Documents/Projects/pCloudFiles/Final/APIpCloud.py"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.pcloud.com/uploadfile?folderid=24470896026&access_token={{access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"uploadfile"
+					],
+					"query": [
+						{
+							"key": "folderid",
+							"value": "24470896026",
+							"description": "24468504614 is Parent Folder"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FilePassword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/getfilepublink?fileid=69502460435&linkpassword=1234qwer&access_token={{access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"getfilepublink"
+					],
+					"query": [
+						{
+							"key": "fileid",
+							"value": "69502460435"
+						},
+						{
+							"key": "linkpassword",
+							"value": "1234qwer"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetIP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/getip",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"getip"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetServerAPI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/getapiserver",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"getapiserver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UserInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/userinfo?access_token={{access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"userinfo"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SupportedLanguages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/supportedlanguages",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"supportedlanguages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CurrentServer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/currentserver",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"currentserver"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Diff",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `",
+							"<style type=\"text/css\">",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+							"    .tftable tr {background-color:#ffffff;}",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+							"    .tftable tr:hover {background-color:#e0ffff;}",
+							"</style>",
+							"",
+							"<table class=\"tftable\" border=\"1\">",
+							"    <tr>",
+							"        <th>Event</th>",
+							"        <th>Time</th>",
+							"        <th>Name</th>",
+							"        <th>Created</th>",
+							"        <th>Modified</th>",
+							"        <th>Parent Folder ID</th>",
+							"    </tr>",
+							"    ",
+							"    {{#each response.entries}}",
+							"        <tr>",
+							"            <td>{{event}}</td>",
+							"            <td>{{time}}</td>",
+							"            <td>{{metadata.name}}</td>",
+							"            <td>{{metadata.created}}</td>",
+							"            <td>{{metadata.modified}}</td>",
+							"            <td>{{metadata.parentfolderid}}</td>",
+							"        </tr>",
+							"    {{/each}}",
+							"</table>",
+							"`;",
+							"",
+							"function constructVisualizerPayload() {",
+							"    return {response: pm.response.json()}",
+							"}",
+							"",
+							"pm.visualizer.set(template, constructVisualizerPayload());",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/diff?access_token={{access_token}}&diffid=30029",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"diff"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "diffid",
+							"value": "30029",
+							"description": "int, receive only changes since that diffid"
+						}
+					]
+				},
+				"description": "\nThis endpoint makes an HTTP GET request to retrieve the difference between two files or folders in the pCloud account. The request requires the access token and the diffid as query parameters.\n\nThe response returns a status code of 200 and a JSON object with a \"result\" field indicating the result of the diff operation, a \"diffid\" field representing the difference ID, and an \"entries\" array containing information about the differences. Each entry in the \"entries\" array includes details such as event, time, metadata, and more.\n\nAs per the user's request, the length of the values in the \"entries\" array will be calculated.\n"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFolder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/deletefolder?access_token={{access_token}}&folderid=24470896026",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"deletefolder"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "folderid",
+							"value": "24470896026"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFolderRecursive",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/deletefolderrecursive?access_token={{access_token}}&folderid=24470896026",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"deletefolderrecursive"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "folderid",
+							"value": "24470896026"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CopyFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/copyfile?access_token={{access_token}}&fileid=69502460435&tofolderid=24470604055",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"copyfile"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "fileid",
+							"value": "69502460435",
+							"description": "Source File ID"
+						},
+						{
+							"key": "tofolderid",
+							"value": "24470604055",
+							"description": "Destination Folder ID"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CheckSumFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/checksumfile?access_token={{access_token}}&fileid=69506789355",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"checksumfile"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "fileid",
+							"value": "69506789355"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/deletefile?access_token={{access_token}}&fileid=69505567908",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"deletefile"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "fileid",
+							"value": "69505567908"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RenameFile",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/renamefile?fileid=69505606260&toname=pCloudAPI.py&access_token={{access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"renamefile"
+					],
+					"query": [
+						{
+							"key": "fileid",
+							"value": "69505606260"
+						},
+						{
+							"key": "toname",
+							"value": "pCloudAPI.py"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FileStat",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/stat?fileid=69505606260&access_token={{access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"stat"
+					],
+					"query": [
+						{
+							"key": "fileid",
+							"value": "69505606260"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateFolderIfNotExists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/createfolderifnotexists?name=Test Folder To Delete&access_token={{access_token}}&folderid=24468504614",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"createfolderifnotexists"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Test Folder To Delete"
+						},
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						},
+						{
+							"key": "folderid",
+							"value": "24468504614"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ListTokens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/listtokens?access_token={{access_token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"listtokens"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "access_token",
+			"value": "9Wr97ZO8u0tcWE63hZXzkhXkZJiA489g1VQYUk9DwV5cLRm7Jbz07"
+		}
+	]
+}
